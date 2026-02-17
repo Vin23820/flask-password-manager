@@ -18,17 +18,14 @@ This application allows users to register, login, and manage records securely.
 - SQLite (or MySQL)
 # Project Structure
 flask-manager-app/
-│
 ├── app.py
 ├── templates/
 │   ├── login.html
 │   ├── register.html
 │   ├── dashboard.html
-│
 ├── static/
 │   ├── css/
 │   └── images/
-│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -48,14 +45,13 @@ flask-manager-app/
    python app.py
 7. Open in browser  
    http://127.0.0.1:5000/
-
 # Future Enhancements
 - Password Hashing using Werkzeug
 - Role-Based Access Control
 - Admin Dashboard
 - Deployment on AWS / Render
-
-#👨‍💻 Author
+# Author
 M.Vinay
+
 
 
