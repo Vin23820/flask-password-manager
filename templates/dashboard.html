@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Your Saved Passwords</h2>
+
+<a href="{{ url_for('add_password') }}">Add New Password</a>
+<a href="{{ url_for('logout') }}" style="margin-left:20px;">Logout</a>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Website</th>
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+
+    {% for entry in entries %}
+    <tr>
+        <td>{{ entry.website }}</td>
+        <td>{{ entry.email }}</td>
+        <td>{{ entry.password }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% if not entries %}
+<p>No passwords saved yet.</p>
+{% endif %}
+
+{% endblock %}
+
