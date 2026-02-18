@@ -2,7 +2,6 @@ from flask import Flask, render_template, redirect, url_for, request, flash
 from models import db, User, PasswordEntry
 from utils import hash_password, verify_password
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecretkey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -79,7 +78,6 @@ def add_password():
             password=password,
             user_id=current_user.id
         )
-
         db.session.add(entry)
         db.session.commit()
         flash("Password saved successfully")
@@ -92,6 +90,6 @@ def add_password():
 def logout():
     logout_user()
     return redirect(url_for("login"))
-
 if __name__ == "__main__":
     app.run(debug=True)
+
